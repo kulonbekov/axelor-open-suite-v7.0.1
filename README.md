@@ -1,23 +1,29 @@
-Axelor Open Suite
+Axelor Open Suite v7.0.1
 ================================
 
-Axelor Open Suite reduces the complexity and improve responsiveness of business processes. Thanks to its modularity, you can start with few features and  then activate other modules when needed.
+Axelor Open Suite снижает сложность и улучшает отзывчивость бизнес-процессов. Благодаря своей модульности, вы можете начать с небольшого набора функций и затем активировать другие модули по мере необходимости.
 
-Axelor Open Suite includes the following modules :
+Axelor Open Suite включает следующие модули:
 
-* Customer Relationship Management
-* Sales management
-* Financial and cost management
-* Human Resource Management
-* Project Management
-* Inventory and Supply Chain Management
-* Production Management
-* Multi-company, multi-currency and multi-lingual
+* Управление взаимоотношениями с клиентами (CRM)
+* Управление продажами
+* Финансовое и управление затратами
+* Управление персоналом
+* Управление проектами
+* Управление запасами и цепочкой поставок
+* Управление производством
+* Многокомпанийность, многовалютность и многоязычность
 
-Axelor Open Suite is built on top of [Axelor Open Platform](https://github.com/axelor/axelor-open-platform)
+Axelor Open Suite построена на основе [Axelor Open Platform](https://github.com/axelor/axelor-open-platform)
 
+Технические требования
+================================
 
-Installation
+* [OpenJDK 11](https://www.oracle.com/cis/java/technologies/javase/jdk11-archive-downloads.html)
+* [PostgreSQL 11](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) или новее
+* [Apache Tomkat 9.0.75](https://tomcat.apache.org/download-90.cgi)
+
+Установка
 ================================
 
 To compile and run from source, you will need to clone Axelor Open Suite modules, which is a
