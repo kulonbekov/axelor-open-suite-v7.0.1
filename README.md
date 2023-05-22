@@ -25,13 +25,13 @@ Axelor Open Suite построена на основе [Axelor Open Platform](ht
 
 Установка
 ================================
-1. Создать новую папку "axelor-7.0.1" , в директории ../IdeaProjects/
-2. Перейдите к новой созданной папке через терминал
+1. Создайте новую папку "axelor-7.0.1" , в директории ../IdeaProjects/
+2. Перейдите в новую созданную папку через терминал:
 ```bash
 cd axelor-7.0.1
 ```
-3. Чтобы скомпилировать и запустить из исходного кода, вам потребуется клонировать модули 
-[Axelor Open Suite](https://github.com/axelor/axelor-open-suite) который является репозиторием подмодулей git, используя следующие команды:
+3. Для компиляции и запуска из исходного кода вам потребуется клонировать модули  
+[Axelor Open Suite](https://github.com/axelor/axelor-open-suite) которые являются репозиторием подмодулей Git, с использованием следующих команд:
 
 ```bash
 $ git clone git@github.com:axelor/open-suite-webapp.git
@@ -44,21 +44,22 @@ $ git submodule foreach git checkout master
 $ git submodule foreach git pull origin master
 ```
 4. Подождите, пока подмодули обновятся до последних версий.
-5. Создать базу в PostgreSQl 
+5. Создайте базу данных в PostgreSQL с названием 
 ```bash
 axelor-open-suite
 ```
-6. Добавить пользователя к созданной базе 
+6. Добавьте пользователя к созданной базе данных с именем пользователя "axelor" и задайте пароль. 
 ```bash
 usermname: axelor, password: ****** 
 ```
-7. Перейти к файлу `axelor-config.application`
+7. Откройте файл `axelor-config.application`  в папке
 ```bash
 axelor-7.0.1\open-suite-webapp\src\main\resources
 ```
-8. Настройки базы данных:
+8. Настройте параметры базы данных:
 ```bash
 db.default.url = jdbc:postgresql://localhost:5432/axelor-open-suite
 db.default.user = axelor
 db.default.password = postgres
 ```
+9. 
