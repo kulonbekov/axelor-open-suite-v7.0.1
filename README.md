@@ -44,5 +44,12 @@ $ git submodule foreach git checkout master
 $ git submodule foreach git pull origin master
 ```
 4. Подождите, пока подмодули обновятся до последних версий.
-5. Создать базу в PostgreSQl "axelor-open-suite"
-6. Добавить пользователя к созданной базе "axelor"
+5. Создать базу в PostgreSQl 
+```bash
+axelor-open-suite
+```
+6. Добавить пользователя к созданной базе 
+```bash
+usermname: axelor, password: ****** 
+```
+7
