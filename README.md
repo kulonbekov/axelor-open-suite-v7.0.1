@@ -30,7 +30,7 @@ Axelor Open Suite построена на основе [Axelor Open Platform](ht
 ```bash
 cd axelor-7.0.1
 ```
-Чтобы скомпилировать и запустить из исходного кода, вам потребуется клонировать модули 
+3. Чтобы скомпилировать и запустить из исходного кода, вам потребуется клонировать модули 
 [Axelor Open Suite](https://github.com/axelor/axelor-open-suite) который является репозиторием подмодулей git, используя следующие команды:
 
 ```bash
@@ -43,5 +43,6 @@ $ git submodule update
 $ git submodule foreach git checkout master
 $ git submodule foreach git pull origin master
 ```
-
-You can find more detailed [installation instructions](https://docs.axelor.com/abs/5.0/install/index.html) on our documentation.
+4. Подождите, пока подмодули обновятся до последних версий.
+5. Создать базу в PostgreSQl "axelor-open-suite"
+6. Добавить пользователя к созданной базе "axelor"
