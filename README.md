@@ -25,13 +25,18 @@ Axelor Open Suite построена на основе [Axelor Open Platform](ht
 
 Установка
 ================================
-
-To compile and run from source, you will need to clone Axelor Open Suite modules, which is a
-[git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) repository, using following commands:
+1. Создать новую папку "axelor-7.0.1" , в директории ../IdeaProjects/
+2. Перейдите к новой созданной папке через терминал
+```bash
+cd axelor-7.0.1
+```
+Чтобы скомпилировать и запустить из исходного кода, вам потребуется клонировать модули 
+[Axelor Open Suite](https://github.com/axelor/axelor-open-suite) который является репозиторием подмодулей git, используя следующие команды:
 
 ```bash
 $ git clone git@github.com:axelor/open-suite-webapp.git
 $ cd open-suite-webapp
+$ git config --file=.gitmodules submodule.axelor-open-suite.url https://github.com/axelor/axelor-open-suite.git
 $ git checkout master
 $ git submodule init
 $ git submodule update
