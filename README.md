@@ -52,4 +52,13 @@ axelor-open-suite
 ```bash
 usermname: axelor, password: ****** 
 ```
-7
+7. Перейти к файлу `axelor-config.application`
+```bash
+axelor-7.0.1\open-suite-webapp\src\main\resources
+```
+8. Настройки базы данных:
+```bash
+db.default.url = jdbc:postgresql://localhost:5432/axelor-open-suite
+db.default.user = axelor
+db.default.password = postgres
+```
