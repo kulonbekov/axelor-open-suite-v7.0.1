@@ -20,7 +20,7 @@ Axelor Open Suite построена на основе [Axelor Open Platform](ht
 ================================
 
 * [OpenJDK 11](https://www.oracle.com/cis/java/technologies/javase/jdk11-archive-downloads.html)
-* [PostgreSQL 11](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) или новее
+* [PostgreSQL 12](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) или новее
 * [Apache Tomkat 9.0.75](https://tomcat.apache.org/download-90.cgi)
 
 Установка
@@ -62,17 +62,18 @@ db.default.url = jdbc:postgresql://localhost:5432/axelor-open-suite
 db.default.user = axelor
 db.default.password = postgres
 ```
-9. При сборке проекта версии 7.0.1, возникают две ошибки в подмодулях:
+9. При сборке проекта версии 7.0.1 возникают две ошибки в подмодулях:
 ```bash
 axelor-human-resource
 axelor-project
 ```
-10. Для успешной сборки проекта, необходимо сделать некоторые изменения:
-10.1 Откройте файл `package.json` в папке
+10. Для успешной сборки проекта необходимо выполнить следующие изменения:
+
+11 Откройте файл `package.json` в папке
 ```bash
 axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-human-resource\src\main\axelor-react-timesheet
 ```
-10.2 Удалите фрагмент кода `CI=false` в блоке 
+12 Удалите фрагмент кода `CI=false` в блоке "scripts":
 ```bash
 "scripts": {
     "start": "node scripts/start.js",
@@ -80,11 +81,11 @@ axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-human-resource\s
     "test": "node scripts/test.js --env=jsdom"
   },
 ```
-10.3 Откройте файл `package.json` в папке
+13 Откройте файл `package.json` в папке
 ```bash
 axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-project\src\main\task-editor
 ```
-10.4 Удалите фрагмент кода `CI=false GENERATE_SOURCEMAP=false` в блоке 
+14 Удалите фрагмент кода `CI=false GENERATE_SOURCEMAP=false` в блоке "scripts":
 ```bash
 "scripts": {
     "start": "react-scripts start",
@@ -93,6 +94,7 @@ axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-project\src\main
     "eject": "react-scripts eject"
   },
 ```
+15. После внесения этих изменений можно запустить сервер.
 
 Запустите сервер
 ================================
@@ -125,15 +127,21 @@ axelor-7.0.1\open-suite-webapp\build\libs
 ```
 9. Установите Apache Tomcat на сервер или компьютер, где планируется развернуть приложение
 10. Запустите сервер Apache Tomcat.
-11. Скопируйте WAR-файл, полученный на предыдущем шаге, в директорию webapps внутри каталога установки Tomcat.
-Пример пути: <путь к установке Tomcat>/webapps.
+11. Скопируйте WAR-файл, полученный на предыдущем шаге, в директорию webapps внутри каталога установки Tomcat. Пример пути: 
+```bash
+<путь к установке Tomcat>/webapps.
+```
 12. Перейдите в каталог bin внутри каталога установки Tomcat.
 13. Запустите скрипт startup.bat (для Windows) или startup.sh (для Linux/Unix) для запуска сервера Tomcat.
-14. Откройте веб-браузер и введите URL-адрес приложения в следующем формате: http://localhost:8080/<имя приложения>.
-Примечание: <имя приложения> - это имя WAR-файла без расширения .war.
+14. Откройте веб-браузер и введите URL-адрес приложения в следующем формате: 
+```bash
+http://localhost:8080/<имя приложения>.
+```
+Примечание: `<имя приложения>` - это имя WAR-файла без расширения .war.
+
 15. Если приложение успешно развернуто, вы должны увидеть его главную страницу или другие страницы, предоставляемые приложением.
 
 Примечания:
-* Убедитесь, что порт 8080 не занят другими приложениями или процессами.
-* При необходимости, настройте доступные ресурсы, базы данных или конфигурацию приложения в соответствии с требованиями вашего проекта.
+* `Убедитесь, что порт 8080 не занят другими приложениями или процессами.`
+* `При необходимости, настройте доступные ресурсы, базы данных или конфигурацию приложения в соответствии с требованиями вашего проекта.`
 
