@@ -73,11 +73,11 @@ axelor-project
 ```bash
 axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-human-resource\src\main\axelor-react-timesheet
 ```
-12 Удалите фрагмент кода `CI=false` в блоке "scripts":
+12 Исправит фрагмент кода `CI=false` в блоке "scripts":
 ```bash
 "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "set \"CI=false\" && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
 ```
@@ -85,11 +85,11 @@ axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-human-resource\s
 ```bash
 axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-project\src\main\task-editor
 ```
-14 Удалите фрагмент кода `CI=false GENERATE_SOURCEMAP=false` в блоке "scripts":
+14 Исправить фрагмент кода `CI=false GENERATE_SOURCEMAP=false` в блоке "scripts":
 ```bash
 "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "set \"CI=false\" && set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
