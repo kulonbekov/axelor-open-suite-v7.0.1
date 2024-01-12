@@ -25,56 +25,48 @@ Axelor Open Suite построена на основе [Axelor Open Platform](ht
 
 Установка
 ================================
-1. Создайте новую папку "axelor-7.0.1" , в директории ../IdeaProjects/
-2. Перейдите в новую созданную папку через терминал:
-```bash
-cd axelor-7.0.1
+1. Необходимо скачать оболочку Axelor-ERP проекта по ссылке [open-suite-webapp](https://github.com/axelor/open-suite-webapp)
+2. Разархивировать ZIP файл в папке с проектами
+3. Перейти по ссылке в проводнике
 ```
-2.1 Необходимо скачать оболочку Axelor-ERP проекта по ссылке [open-suite-webapp](https://github.com/axelor/open-suite-webapp)
-3. Для компиляции и запуска из исходного кода вам потребуется клонировать модули  
-[Axelor Open Suite](https://github.com/axelor/axelor-open-suite) которые являются репозиторием подмодулей Git, с использованием следующих команд:
-
-```bash
-$ git clone git@github.com:axelor/open-suite-webapp.git
-$ cd open-suite-webapp
-$ git config --file=.gitmodules submodule.axelor-open-suite.url https://github.com/axelor/axelor-open-suite.git
-$ git checkout master
-$ git submodule init
-$ git submodule update
-$ git submodule foreach git checkout master
-$ git submodule foreach git pull origin master
+open-suite-webapp-master\open-suite-webapp-master\modules
 ```
-4. Подождите, пока подмодули обновятся до последних версий.
-5. Создайте базу данных в PostgreSQL с названием 
+5. Удалить папку
+```
+axelor-open-suite
+```
+6. Внутри папки modules, запускаем git bash, ввести команду
+```
+git clone https://github.com/axelor/axelor-open-suite.git
+```
+7. После подождать , пока скачается все нужные модули для проекта
+ 
+8. Создайте базу данных в PostgreSQL с названием 
 ```bash
 axelor-open-suite
 ```
-6. Добавьте пользователя к созданной базе данных с именем пользователя "axelor" и задайте пароль. 
+9. Откройте файл `axelor-config.application`  в папке
 ```bash
-usermname: axelor, password: ****** 
+\open-suite-webapp\src\main\resources
 ```
-7. Откройте файл `axelor-config.application`  в папке
-```bash
-axelor-7.0.1\open-suite-webapp\src\main\resources
-```
-8. Настройте параметры базы данных:
+10. Настройте параметры базы данных:
 ```bash
 db.default.url = jdbc:postgresql://localhost:5432/axelor-open-suite
-db.default.user = axelor
+db.default.user = postgres
 db.default.password = postgres
 ```
-9. При сборке проекта версии 7.0.1 возникают две ошибки в подмодулях:
+11. При сборке проекта версии от 7 версии, возникают две ошибки в подмодулях:
 ```bash
 axelor-human-resource
 axelor-project
 ```
-10. Для успешной сборки проекта необходимо выполнить следующие изменения:
+12. Для успешной сборки проекта необходимо выполнить следующие изменения:
 
-11 Откройте файл `package.json` в папке
+13 Откройте файл `package.json` в папке
 ```bash
 axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-human-resource\src\main\axelor-react-timesheet
 ```
-12 Исправит фрагмент кода `CI=false` в блоке "scripts":
+14 Исправит фрагмент кода `CI=false` в блоке "scripts":
 ```bash
 "scripts": {
     "start": "node scripts/start.js",
@@ -82,11 +74,11 @@ axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-human-resource\s
     "test": "node scripts/test.js --env=jsdom"
   },
 ```
-13 Откройте файл `package.json` в папке
+15 Откройте файл `package.json` в папке
 ```bash
 axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-project\src\main\task-editor
 ```
-14 Исправить фрагмент кода `CI=false GENERATE_SOURCEMAP=false` в блоке "scripts":
+16 Исправить фрагмент кода `CI=false GENERATE_SOURCEMAP=false` в блоке "scripts":
 ```bash
 "scripts": {
     "start": "react-scripts start",
@@ -95,7 +87,7 @@ axelor-7.0.1\open-suite-webapp\modules\axelor-open-suite\axelor-project\src\main
     "eject": "react-scripts eject"
   },
 ```
-15. После внесения этих изменений можно запустить сервер.
+17. После внесения этих изменений можно запустить сервер.
 
 Запустите сервер
 ================================
