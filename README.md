@@ -30,6 +30,7 @@ Axelor Open Suite построена на основе [Axelor Open Platform](ht
 ```bash
 cd axelor-7.0.1
 ```
+2.1 Необходимо скачать оболочку Axelor-ERP проекта по ссылке [open-suite-webapp](https://github.com/axelor/open-suite-webapp)
 3. Для компиляции и запуска из исходного кода вам потребуется клонировать модули  
 [Axelor Open Suite](https://github.com/axelor/axelor-open-suite) которые являются репозиторием подмодулей Git, с использованием следующих команд:
 
